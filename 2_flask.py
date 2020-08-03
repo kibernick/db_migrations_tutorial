@@ -1,8 +1,10 @@
 """An example Flask app
 
-run with: FLASK_APP=2_flask.py flask run
+run with:
+$ FLASK_APP=2_flask.py flask run
 
-initialize alembic with 
+initialize alembic with:
+$ alembic init migrations
 """
 from flask import Flask, jsonify, request, make_response
 from flask_sqlalchemy import SQLAlchemy
