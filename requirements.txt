@@ -1,0 +1,7 @@
+psycopg2
+ipython
+flask
+alembic
+flask-sqlalchemy
+python-dotenv
+requests
