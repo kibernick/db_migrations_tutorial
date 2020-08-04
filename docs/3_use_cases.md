@@ -32,12 +32,12 @@ NOTE: renaming or deleting a column in _not_ backwards-compatible.
 
 ## Example
 
-> Add a "comment" column to the "cat" table
+### Add a "comment" column to the "cat" table
 
 Simple - add a column to the ORM and run the auto migration command. Looking at the generated script
 there should be a forward and backward migration, adding/deleting the new column.
 
-> Rename column "comment" to "message".
+### Rename column "comment" to "message".
 
 ![](cat_tables.png)
  
@@ -48,14 +48,14 @@ there should be a forward and backward migration, adding/deleting the new column
 5. Free to delete the old column
 6. Free to set the new column to `NOT NULL` if needed.
 
-> Change the type of a column.
+### Change the type of a column.
 
 For example: we had a column "size" with string values "small", "medium", "large". Need to convert this 
 from string to integer values (enumerated).
 
 The steps would be very similar to the previous example.
 
-> Read in data from a backup / file transfer
+### Data migration - backup / transfer
 
 Typical when moving between databases or provisioning your database with data from a certain state. You will need to
 read in data in the migration file and commit the changes as you would in regular Python code. You can read new data 
