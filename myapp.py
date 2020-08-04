@@ -1,7 +1,7 @@
 """An example Flask app
 
 run with:
-$ FLASK_APP=2_flask.py flask run
+$ FLASK_APP=myapp.py flask run
 
 initialize alembic with:
 $ alembic init migrations

@@ -19,7 +19,7 @@ cur = conn.cursor()
 
 # Execute a command: this creates a new table
 cur.execute("""
-CREATE TABLE IF NOT EXISTS Cat (
+CREATE TABLE IF NOT EXISTS cat (
     "id" serial PRIMARY KEY,
     "name" varchar(20) NOT NULL
 );
@@ -35,4 +35,3 @@ for some_cat in some_cats:
     cur.execute("INSERT INTO Cat (name) VALUES (%s)", (some_cat,))
 
 conn.commit()
-
