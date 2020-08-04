@@ -8,10 +8,30 @@ $ alembic init migrations
 
 This will set up some defaults in that dir. Among them check out `env.py`.
 
-To start from a blank slate, drop the existing `Cat` table and then run:
+To start from a blank slate, drop the existing `Cat` table and then run the following command, which will upgrade your
+database to the latest version (`head`, like in Git):
 
 ```bash
 $ alembic upgrade head
+```
+
+## Generate a migration
+
+Create a new migration script with:
+
+```bash
+$ alembic revision -m "a descriptive message"
+```
+
+This will create a new migration script in the `migrations/versions` directory. You will need to fill in the up and down
+migrations yourself, using the alembic operations (`op`) and SQLAlchemy (`sa`) provided in the imports at the top.
+
+## Misc commands
+
+To go back exactly one version:
+
+```bash
+$ alembic downgrade -1
 ```
 
 ## Auto Generating Migrations

@@ -54,3 +54,13 @@ For example: we had a column "size" with string values "small", "medium", "large
 from string to integer values (enumerated).
 
 The steps would be very similar to the previous example.
+
+> Read in data from a backup / file transfer
+
+Typical when moving between databases or provisioning your database with data from a certain state. You will need to
+read in data in the migration file and commit the changes as you would in regular Python code. You can read new data 
+from a file dump, from a network connection, or even from another database connection. 
+
+Make sure to include data deletion in the down migration for backwards-compatibility.
+
+See: [example](../migrations/versions/2aec8bdecc20_read_in_some_cats.py) with adding some cat names to our example table

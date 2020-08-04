@@ -30,8 +30,8 @@ changing the field types, adding triggers.
 
 Two directions:
 
-* Forwards
-* Backwards (rollback)
+* Up / Forwards
+* Down / Backwards (rollback)
 
 ## Tools
 
