@@ -76,7 +76,6 @@ def get_cat(cat_id: int):
         return make_response("Not found", 404)
 
     return cat.as_dict()
-    
 
 
 @app.route('/cats/<int:cat_id>/rate/<int:rating>', methods=['GET'])
