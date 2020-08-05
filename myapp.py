@@ -24,7 +24,7 @@ class Cat(db.Model):
         return '<Cat %r>' % self.name
 
     def as_dict(self):
-       return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
 ###
@@ -79,7 +79,7 @@ def get_cat(cat_id: int):
 
 
 @app.route('/cats/<int:cat_id>/rate/<int:rating>', methods=['GET'])
-def delete_cat(cat_id: int, rating: int):
+def rate_a_cat(cat_id: int, rating: int):
     """Give a cat a rating.
 
     >>> import requests
@@ -90,4 +90,6 @@ def delete_cat(cat_id: int, rating: int):
         return make_response("Not found", 404)
 
     # TODO: implement rating!
-    return cat.as_dict()
+    cat_dict = cat.as_dict()
+    cat_dict['rating'] = rating
+    return cat_dict
